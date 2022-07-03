@@ -1,0 +1,39 @@
+<%- include('partials/head') %>
+
+<div class="md:columns-3 container mx-auto px-20 pt-3 mt-5 mb-12">
+			
+  <div>
+    <%
+
+    let sorted = data.reduce((acc, arr) => {
+      let initial = arr.name[0]; 
+      if (!acc[initial]) acc[initial] = { initial, name: [arr] } 
+      else acc[initial].name.push(arr); 
+      return acc; 
+    }, {});
+
+    let result = Object.values(sorted);
+
+    result.forEach((row) => {
+      
+      %><div class="bg-gray-800 text-gray-50 px-2 py-1 font-bold my-2"><%= row.initial %></div><%
+
+      for (const property in row.name) { %>
+        
+        <a href="/team/<%= row.name[property]["id"] %>">
+          <div><%= row.name[property]["name"] + ' ' %></div>
+        </a>
+        
+      <%
+      }
+
+    });
+    %>
+  </div>
+
+  <div class="h-screen"></div>
+
+</div>
+
+
+<%- include('partials/foot') %>

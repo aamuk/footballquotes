@@ -1,0 +1,34 @@
+<%- include('partials/head') %>
+
+<div class="container mx-auto px-20 pt-3 mt-5">
+			
+
+	<% data.forEach(entry => { %>
+        <p class="mt-2">
+            <a href="/team/<%= entry.id %>" class="text-xl font-medium text-gray-900"><%= entry.name %></a>
+        </p>
+    <% }) %>
+
+    <div class="py-10">
+        <% if(page > 1) { %> <a href="/teams?page=<%=page-1%>">Previous</a> <% } %>
+        <% for(let i = iterator; i <= endingLink; i++) { %>
+            <% if(i === page) { %>
+            <a class="font-bold" href="/teams?page=<%=i%>"><%=i%></a>
+            <% continue; %>
+        <% } %>
+            <a href="/teams/?page=<%=i%>"><%=i%></a>
+            <% } %>
+            <% if(page < numberOfPages) { %> <a href="/teams/?page=<%=page+1%>">Next</a> <% } %>
+    </div>
+
+</div>
+
+
+
+<%- include('partials/foot') %>
+
+
+
+
+
+

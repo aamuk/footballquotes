@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../styles.css" />
+		<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+		<title>Football Quotes</title>
+	</head>
+	<body>
+		<nav id="top" class="bg-fire-700 shadow-xl">
+			<div class="container flex items-center justify-items-start p-1 mx-auto text-gray-600">
+				<div class="container flex justify-items-start items-center p-6 mx-auto text-gray-900">
+					<img src="../images/logo.png" alt="Logo" class="px-3">
+					<a href="/"><span class="font-heading text-2xl md:text-4xl text-gray-50 tracking-tight"> Football Quotes</span></a>
+				</div>
+
+				<div class="container hidden md:flex items-center justify-end p-6 mx-auto text-gray-600">
+					<a href="/new" class="text-gray-50 md:text-xl mx-1.5 sm:mx-6">Latest Quotes</a>
+					<a href="/authors" class="text-gray-50 md:text-xl mx-1.5 sm:mx-6">Authors</a>
+					<a href="/teams" class="text-gray-50 md:text-xl mx-1.5 sm:mx-6">Teams</a>
+				</div>
+				<!-- Mobile nav button  -->
+				<div class="md:hidden flex items-center">
+					<button class="mobile-menu-button mr-2">
+						<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFF">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Mobile menu -->
+		<div class="mobile-menu hidden md:hidden bg-orange-100">
+			<a href="/new" class="block py-2 px-4 hover:bg-orange-200">Latest Quotes</a>
+			<a href="/authors" class="block py-2 px-4 hover:bg-orange-200">Authors</a>
+			<a href="/teams" class="block py-2 px-4 hover:bg-orange-200">Teams</a>
+		</div>
+
+    

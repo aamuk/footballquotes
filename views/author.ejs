@@ -1,0 +1,48 @@
+<%- include('partials/head') %>
+
+<div>
+
+    <% data.forEach(entry => { %>
+        <div class="container-sm mx-auto px-20 xl:px-64 pt-3 mt-5">
+            <div class="container-sm mx-auto">
+                <div class="mt-6 text-xl text-center text-gray-900">
+                    "<%= entry.quote %>"
+                </div>
+                <% if(entry.image) { %>
+                    <div class="flex justify-center items-center pt-4 pb-2">
+                        <img class="resize rounded-full w-24 h-24" src="../images/authors/<%= entry.image %>" alt="Author Image">
+                    </div>
+                <% } %>
+                <div class="text-center">
+                    <a href="/author/<%= entry.author_id %>" class="text-xl font-extrabold text-green-800"><%= entry.fname %> <%= entry.lname %></a>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="m-1">
+                        <a href="#" onclick="
+                        window.open(
+                          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                          'facebook-share-dialog', 
+                          'width=626,height=436'); 
+                        return false;">
+                            <img src="../images/icons/facebook.png" alt="Share On Facebook">
+                        </a>
+                    </div>
+                    <div class="m-1">
+                        <a href="#">
+                            <img src="../images/icons/twitter.png" alt="Share On Twitter">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+
+    <div class="h-screen"></div>
+
+</div>
+
+
+<%- include('partials/foot') %>
+
+
+

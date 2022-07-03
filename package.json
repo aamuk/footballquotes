@@ -1,0 +1,31 @@
+{
+  "name": "footballquotes-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "build-css": "tailwindcss build ./public/tailwind.css -o ./public/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7"
+  }
+}

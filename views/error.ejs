@@ -1,0 +1,21 @@
+<%- include('partials/head') %>
+
+<div class="h-screen">
+
+    <div class="md:pl-64 md:pr-64 bg-white pt-5">
+        <span class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Error</span>
+        
+        <div class="pt-8 text-red-600">
+            <%= err %>
+        </div>
+        
+        <div class="pt-2 text-green-600">
+            <%= sql %>
+        </div>
+    </div>
+
+</div>  
+
+
+
+<%- include('partials/foot') %>

@@ -1,0 +1,65 @@
+<%- include('partials/head') %>
+
+<% data.forEach(entry => { %>
+    <div class="container-sm mx-auto px-20 xl:px-64 pt-3 mt-5">
+        <div class="container-sm mx-auto">
+            <div class="mt-6 text-xl text-center text-gray-900">
+                "<%= entry.quote %>"
+            </div>
+            <% if(entry.image) { %>
+                <div class="flex justify-center items-center pt-4 pb-2">
+                    <img class="resize rounded-full w-24 h-24" src="../images/authors/<%= entry.image %>" alt="Author Image">
+                </div>
+            <% } %>
+            <div class="text-center">
+                <a href="/author/<%= entry.author_id %>" class="text-xl font-extrabold text-green-800"><%= entry.fname %> <%= entry.lname %></a>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="m-1">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.footballquotes.co.uk%2Fquote%2FFootball-Quotes-1462676&amp;quote=<%= entry.quote %>">
+                        <img src="../images/icons/facebook.png" alt="Share On Facebook">
+                    </a>
+                </div>
+                <div class="m-1">
+                    <a href="http://twitter.com/share?text=<%= entry.quote %>">
+                        <img src="../images/icons/twitter.png" alt="Share On Twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }) %>
+
+<div class="flex items-center justify-center pt-28 pb-28">
+    <div>
+        <ul class="inline-flex -space-x-px">
+        <% if(page > 1) { %> 
+            <li>
+                <a href="/new?page=<%=page-1%>" class="py-2 px-2 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-300 hover:text-gray-700">&#8592;</a>
+            </li>
+        <% } %>
+
+        <% for(let i = iterator; i <= endingLink; i++) { %>
+            <% if(i === page) { %>
+                <li>
+                    <a href="/new?page=<%=i%>" class="py-2 px-2 leading-tight text-gray-900 bg-gray-300 border border-gray-300 hover:bg-gray-200 hover:text-gray-700"><%=i%></a>
+                </li>
+            <% continue; %>
+        <% } %>
+            <li>
+                <a href="/new?page=<%=i%>" class="py-2 px-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-200 hover:text-gray-700"><%=i%></a>
+            </li>
+        <% } %>
+        <% if(page < numberOfPages) { %> 
+            <li>
+                <a href="/new?page=<%=page+1%>" class="py-2 px-2 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-300 hover:text-gray-700">&#8594;</a>
+            </li>
+        <% } %>
+        </ul>
+    </div>
+</div>
+
+<%- include('partials/foot') %>
+
+
+
